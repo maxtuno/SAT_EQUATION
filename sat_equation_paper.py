@@ -64,6 +64,7 @@ if __name__ == '__main__':
     print(bits(sat_equation(cnf, n, m), 2 ** n))
 
     print("""
+    (a|b|c|~d)&(a|b|~c|~d)&(a|~b|c|~d)&(a|~b|~c|~d)&(~a|b|c|~d)&(~a|b|~c|d)&(~a|~b|c|d)&(~a|~b|~c|d)
     a      b      c      d      value
     False  False  False  False  True
     False  False  False  True   False
