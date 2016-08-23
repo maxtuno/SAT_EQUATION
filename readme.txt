@@ -1,0 +1,8 @@
+# FUNDAMENTAL LAW OF BINARY THEORIES
+## UNIVERSAL NUMBER THEORY EQUATION OF SAT
+
+https://www.academia.edu/27914083/FUNDAMENTAL_LAW_OF_BINARY_THEORIES_-_UNIVERSAL_NUMBER_THEORY_EQUATION_OF_SAT
+
+http://twitter.com/maxtuno
+
+Note: This is an equation not an algorithm
