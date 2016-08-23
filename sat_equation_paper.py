@@ -56,7 +56,8 @@ if __name__ == '__main__':
     True   True   True   True
     """)
 
-    cnf = [(1, 2, 3, -4), (1, 2, -3, -4), (1, -2, 3, -4), (1, -2, -3, -4), (-1, 2, 3, -4), (-1, 2, -3, 4), (-1, -2, 3, 4), (-1, -2, -3, 4)]
+    cnf = [(1, 2, 3, -4), (1, 2, -3, -4), (1, -2, 3, -4), (1, -2, -3, -4), (-1, 2, 3, -4), (-1, 2, -3, 4),
+           (-1, -2, 3, 4), (-1, -2, -3, 4)]
 
     n = 4
     m = len(cnf)
@@ -84,3 +85,47 @@ if __name__ == '__main__':
     True   True   True   True   True
     """)
 
+    cnf = [(1, 2, 3, 4, 5), (1, 2, 3, -4, 5), (1, 2, 3, -4, -5), (1, 2, -3, 4, 5), (1, 2, -3, -4, 5), (1, 2, -3, -4, -5), (1, -2, 3, 4, 5), (1, -2, 3, -4, 5), (1, -2, 3, -4, -5), (1, -2, -3, 4, 5), (1, -2, -3, -4, 5), (1, -2, -3, -4, -5), (-1, 2, 3, 4, 5), (-1, 2, 3, -4, 5), (-1, 2, 3, -4, -5), (-1, 2, -3, 4, -5), (-1, -2, 3, 4, -5), (-1, -2, -3, 4, -5)]
+
+    n = 5
+    m = len(cnf)
+
+    print(bits(sat_equation(cnf, n, m), 2 ** n))
+
+    print("""
+    (a|b|c|d|e)&(a|b|c|~d|e)&(a|b|c|~d|~e)&(a|b|~c|d|e)&(a|b|~c|~d|e)&(a|b|~c|~d|~e)&(a|~b|c|d|e)&(a|~b|c|~d|e)&(a|~b|c|~d|~e)&(a|~b|~c|d|e)&(a|~b|~c|~d|e)&(a|~b|~c|~d|~e)&(~a|b|c|d|e)&(~a|b|c|~d|e)&(~a|b|c|~d|~e)&(~a|b|~c|d|~e)&(~a|~b|c|d|~e)&(~a|~b|~c|d|~e)
+    a      b      c      d      e      value
+    False  False  False  False  False  False
+    False  False  False  False  True   True
+    False  False  False  True   False  False
+    False  False  False  True   True   False
+    False  False  True   False  False  False
+    False  False  True   False  True   True
+    False  False  True   True   False  False
+    False  False  True   True   True   False
+    False  True   False  False  False  False
+    False  True   False  False  True   True
+    False  True   False  True   False  False
+    False  True   False  True   True   False
+    False  True   True   False  False  False
+    False  True   True   False  True   True
+    False  True   True   True   False  False
+    False  True   True   True   True   False
+    True   False  False  False  False  False
+    True   False  False  False  True   True
+    True   False  False  True   False  False
+    True   False  False  True   True   False
+    True   False  True   False  False  True
+    True   False  True   False  True   False
+    True   False  True   True   False  True
+    True   False  True   True   True   True
+    True   True   False  False  False  True
+    True   True   False  False  True   False
+    True   True   False  True   False  True
+    True   True   False  True   True   True
+    True   True   True   False  False  True
+    True   True   True   False  True   False
+    True   True   True   True   False  True
+    True   True   True   True   True   True
+    """)
+    
