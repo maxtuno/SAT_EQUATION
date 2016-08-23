@@ -21,7 +21,7 @@ def bits(n, p):
     while n:
         s = [n % 2 == 0] + s
         n //= 2
-    s += (p - len(s)) * [False]
+    s = (p - len(s)) * [True] + s
     return s
 
 
@@ -36,7 +36,7 @@ def sat_equation(cnf, n, m):
 
 
 if __name__ == '__main__':
-
+    
     import sys
     import csv
     import time
