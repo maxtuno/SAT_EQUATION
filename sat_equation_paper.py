@@ -155,3 +155,79 @@ if __name__ == '__main__':
     True   True   True   False  False
     True   True   True   True   False
     """)
+    
+    cnf = [(1, 2, 3, 4, 5, 6), (1, 2, 3, 4, 5, -6), (1, 2, 3, 4, -5, -6), (1, 2, 3, -4, 5, 6), (1, 2, 3, -4, 5, -6), (1, 2, 3, -4, -5, 6), (1, 2, 3, -4, -5, -6), (1, 2, -3, 4, 5, 6), (1, 2, -3, 4, 5, -6), (1, 2, -3, 4, -5, 6), (1, 2, -3, 4, -5, -6), (1, 2, -3, -4, 5, 6), (1, 2, -3, -4, 5, -6), (1, 2, -3, -4, -5, 6), (1, 2, -3, -4, -5, -6), (1, -2, 3, 4, 5, 6), (1, -2, 3, 4, 5, -6), (1, -2, 3, 4, -5, 6), (1, -2, 3, 4, -5, -6), (1, -2, 3, -4, 5, 6), (1, -2, 3, -4, 5, -6), (1, -2, 3, -4, -5, 6), (1, -2, 3, -4, -5, -6), (1, -2, -3, 4, 5, 6), (1, -2, -3, 4, 5, -6), (1, -2, -3, 4, -5, 6), (1, -2, -3, 4, -5, -6), (1, -2, -3, -4, 5, 6), (1, -2, -3, -4, 5, -6), (1, -2, -3, -4, -5, 6), (1, -2, -3, -4, -5, -6), (-1, 2, 3, 4, 5, 6), (-1, 2, 3, 4, 5, -6), (-1, 2, 3, 4, -5, 6), (-1, 2, 3, 4, -5, -6), (-1, 2, 3, -4, 5, 6), (-1, 2, 3, -4, 5, -6), (-1, 2, 3, -4, -5, 6), (-1, 2, 3, -4, -5, -6), (-1, 2, -3, 4, 5, 6), (-1, 2, -3, 4, 5, -6), (-1, 2, -3, 4, -5, 6), (-1, 2, -3, 4, -5, -6), (-1, 2, -3, -4, 5, 6), (-1, 2, -3, -4, 5, -6), (-1, 2, -3, -4, -5, 6), (-1, 2, -3, -4, -5, -6), (-1, -2, 3, 4, 5, 6), (-1, -2, 3, 4, 5, -6), (-1, -2, 3, 4, -5, 6), (-1, -2, 3, 4, -5, -6), (-1, -2, 3, -4, 5, 6), (-1, -2, 3, -4, 5, -6), (-1, -2, 3, -4, -5, 6), (-1, -2, 3, -4, -5, -6), (-1, -2, -3, 4, 5, 6), (-1, -2, -3, 4, 5, -6), (-1, -2, -3, 4, -5, 6), (-1, -2, -3, 4, -5, -6), (-1, -2, -3, -4, 5, 6), (-1, -2, -3, -4, 5, -6), (-1, -2, -3, -4, -5, 6), (-1, -2, -3, -4, -5, -6)]
+
+    n = 6
+    m = len(cnf)
+
+    print(bits(sat_equation(cnf, n, m), 2 ** n))
+
+    print("""
+    (a|b|c|d|e|f)&(a|b|c|d|e|~f)&(a|b|c|d|~e|~f)&(a|b|c|~d|e|f)&(a|b|c|~d|e|~f)&(a|b|c|~d|~e|f)&(a|b|c|~d|~e|~f)&(a|b|~c|d|e|f)&(a|b|~c|d|e|~f)&(a|b|~c|d|~e|f)&(a|b|~c|d|~e|~f)&(a|b|~c|~d|e|f)&(a|b|~c|~d|e|~f)&(a|b|~c|~d|~e|f)&(a|b|~c|~d|~e|~f)&(a|~b|c|d|e|f)&(a|~b|c|d|e|~f)&(a|~b|c|d|~e|f)&(a|~b|c|d|~e|~f)&(a|~b|c|~d|e|f)&(a|~b|c|~d|e|~f)&(a|~b|c|~d|~e|f)&(a|~b|c|~d|~e|~f)&(a|~b|~c|d|e|f)&(a|~b|~c|d|e|~f)&(a|~b|~c|d|~e|f)&(a|~b|~c|d|~e|~f)&(a|~b|~c|~d|e|f)&(a|~b|~c|~d|e|~f)&(a|~b|~c|~d|~e|f)&(a|~b|~c|~d|~e|~f)&(~a|b|c|d|e|f)&(~a|b|c|d|e|~f)&(~a|b|c|d|~e|f)&(~a|b|c|d|~e|~f)&(~a|b|c|~d|e|f)&(~a|b|c|~d|e|~f)&(~a|b|c|~d|~e|f)&(~a|b|c|~d|~e|~f)&(~a|b|~c|d|e|f)&(~a|b|~c|d|e|~f)&(~a|b|~c|d|~e|f)&(~a|b|~c|d|~e|~f)&(~a|b|~c|~d|e|f)&(~a|b|~c|~d|e|~f)&(~a|b|~c|~d|~e|f)&(~a|b|~c|~d|~e|~f)&(~a|~b|c|d|e|f)&(~a|~b|c|d|e|~f)&(~a|~b|c|d|~e|f)&(~a|~b|c|d|~e|~f)&(~a|~b|c|~d|e|f)&(~a|~b|c|~d|e|~f)&(~a|~b|c|~d|~e|f)&(~a|~b|c|~d|~e|~f)&(~a|~b|~c|d|e|f)&(~a|~b|~c|d|e|~f)&(~a|~b|~c|d|~e|f)&(~a|~b|~c|d|~e|~f)&(~a|~b|~c|~d|e|f)&(~a|~b|~c|~d|e|~f)&(~a|~b|~c|~d|~e|f)&(~a|~b|~c|~d|~e|~f)
+    a      b      c      d      e      f      value
+    False  False  False  False  False  False  False
+    False  False  False  False  False  True   False
+    False  False  False  False  True   False  True
+    False  False  False  False  True   True   False
+    False  False  False  True   False  False  False
+    False  False  False  True   False  True   False
+    False  False  False  True   True   False  False
+    False  False  False  True   True   True   False
+    False  False  True   False  False  False  False
+    False  False  True   False  False  True   False
+    False  False  True   False  True   False  False
+    False  False  True   False  True   True   False
+    False  False  True   True   False  False  False
+    False  False  True   True   False  True   False
+    False  False  True   True   True   False  False
+    False  False  True   True   True   True   False
+    False  True   False  False  False  False  False
+    False  True   False  False  False  True   False
+    False  True   False  False  True   False  False
+    False  True   False  False  True   True   False
+    False  True   False  True   False  False  False
+    False  True   False  True   False  True   False
+    False  True   False  True   True   False  False
+    False  True   False  True   True   True   False
+    False  True   True   False  False  False  False
+    False  True   True   False  False  True   False
+    False  True   True   False  True   False  False
+    False  True   True   False  True   True   False
+    False  True   True   True   False  False  False
+    False  True   True   True   False  True   False
+    False  True   True   True   True   False  False
+    False  True   True   True   True   True   False
+    True   False  False  False  False  False  False
+    True   False  False  False  False  True   False
+    True   False  False  False  True   False  False
+    True   False  False  False  True   True   False
+    True   False  False  True   False  False  False
+    True   False  False  True   False  True   False
+    True   False  False  True   True   False  False
+    True   False  False  True   True   True   False
+    True   False  True   False  False  False  False
+    True   False  True   False  False  True   False
+    True   False  True   False  True   False  False
+    True   False  True   False  True   True   False
+    True   False  True   True   False  False  False
+    True   False  True   True   False  True   False
+    True   False  True   True   True   False  False
+    True   False  True   True   True   True   False
+    True   True   False  False  False  False  False
+    True   True   False  False  False  True   False
+    True   True   False  False  True   False  False
+    True   True   False  False  True   True   False
+    True   True   False  True   False  False  False
+    True   True   False  True   False  True   False
+    True   True   False  True   True   False  False
+    True   True   False  True   True   True   False
+    True   True   True   False  False  False  False
+    True   True   True   False  False  True   False
+    True   True   True   False  True   False  False
+    True   True   True   False  True   True   False
+    True   True   True   True   False  False  False
+    True   True   True   True   False  True   False
+    True   True   True   True   True   False  False
+    True   True   True   True   True   True   False
+    """)
