@@ -3,4 +3,6 @@
 # <k> <n> <m>
 # Note: <k> = <n>
 # Need Edit Comments
-cnfgen randkcnf 16 16 512 > cnf.abs
+# k = n % m = 2^m => unsatisfiable
+cnfgen randkcnf 11 11 2048 > cnf_polynomial_unsat.abs
+cnfgen randkcnf 11 11 2047 > cnf_polynomial_sat.abs
