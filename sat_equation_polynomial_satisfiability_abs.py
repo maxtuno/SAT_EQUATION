@@ -20,11 +20,11 @@ def sat_equation_satisfiability(cnf, n, m):
     """
     P = NP
     """
-    sat = 0
+    sat = (m * n) // 2
     for j in range(m):
-        for i in range(n):
-            sat += int(cnf[j][n - 1 - i] > 0)
-    return sat != (m // 2) * n or 2 ** (m.bit_length() - 1) != m
+        for i in range(len(cnf[j])):
+            sat -= int(cnf[j][i] > 0)
+    return sat != 0 or 2 ** (m.bit_length() - 1) != m
 
 
 if __name__ == '__main__':
@@ -37,10 +37,14 @@ if __name__ == '__main__':
 
     with open(sys.argv[1]) as abs_file:
         spam_reader = csv.reader(abs_file, delimiter=' ')
-        n, m = map(int, next(spam_reader))
         cnf = []
-        for row in spam_reader:
-            cnf += [eval(', '.join(row))[:-1]]
+        n, m = 0, 0
+        for spam in list(spam_reader):
+            if spam[0] == 'p':
+                _, _, n, m = spam
+                n, m = int(n), int(m)
+            if spam[0] != 'p' and spam[0] != 'c':
+                cnf += [list(map(int, spam))[:-1]]
 
     print('is satisfiable? {}'.format(sat_equation_satisfiability(cnf, n, m)))
 
