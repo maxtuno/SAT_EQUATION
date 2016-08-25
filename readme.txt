@@ -6,3 +6,5 @@ https://www.academia.edu/27914083/FUNDAMENTAL_LAW_OF_BINARY_THEORIES_-_UNIVERSAL
 http://twitter.com/maxtuno
 
 Note: This is an equation not an algorithm
+
+Warning: The polynomial space implementations for check satisfiability are experimental! no take very seriously
