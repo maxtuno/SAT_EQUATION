@@ -24,7 +24,7 @@ def sat_equation_satisfiability(cnf, n, m):
     for j in range(m):
         for i in range(n):
             sat += int(cnf[j][n - 1 - i] > 0)
-    return sat != (m // 2) * n
+    return sat != (m // 2) * n or 2 ** (m.bit_length() - 1) != m
 
 
 if __name__ == '__main__':
