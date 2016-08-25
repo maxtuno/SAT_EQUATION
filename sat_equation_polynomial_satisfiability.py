@@ -17,9 +17,6 @@ http://twitter.com/maxtuno
 
 
 def sat_equation_satisfiability(cnf, n, m):
-    """
-    P = NP
-    """
     sat = (m * n) // 2
     for j in range(m):
         for i in range(len(cnf[j])):
