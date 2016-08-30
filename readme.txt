@@ -1,10 +1,11 @@
 FUNDAMENTAL LAW OF BINARY THEORIES
 UNIVERSAL NUMBER THEORY EQUATION OF SAT
+http://www.academia.edu/27914083/FUNDAMENTAL_LAW_OF_BINARY_THEORIES_-_UNIVERSAL_NUMBER_THEORY_EQUATION_OF_SAT
 
-https://www.academia.edu/27914083/FUNDAMENTAL_LAW_OF_BINARY_THEORIES_-_UNIVERSAL_NUMBER_THEORY_EQUATION_OF_SAT
+
+PROOF OF FUNDAMENTAL THEOREM OF ARITHMETICA UNIVERSALIS
+http://www.academia.edu/28123997/PROOF_OF_FUNDAMENTAL_THEOREM_OF_ARITHMETICA_UNIVERSALIS
 
 http://twitter.com/maxtuno
 
 Note: This is an equation not an algorithm
-
-Warning: The polynomial space implementations for check satisfiability are experimental! no take very seriously
