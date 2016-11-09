@@ -92,3 +92,11 @@ key             => 4321
 ## Purpose
 
 I think that the best teacher is the curiosity, so it not explain or giving a personal impression, not theorize nothing, only present the results.
+
+## Example:
+
+https://twitter.com/maxtuno/status/796459453499383808
+
+e = 7, m = 143, encrypt 48 => 9^7 % 143 = 48
+for this modality change this line:
+abstract_binary_search(functor(secret)) <=> abstract_binary_search(secret);
