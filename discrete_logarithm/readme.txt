@@ -11,7 +11,7 @@ I create this function in year 2012, has many applications and including unortho
 
 ## Licence
 
-Extends the license of each file on this exclusive directory, for personal use and non-profit, except express explicit mention of its author, at this case extends the license for commercial uses.
+Extends the license of each file on this exclusive directory, for personal use and non-profit, except and express explicit mention of its author Oscar Riveros - [oscar.riveros@peqnp.com], at this case extends the license for commercial uses.
 
 ## About Me:
 Oscar Riveros - oscar.riveros@peqnp.com - twitter.com/maxtuno
