@@ -1,6 +1,6 @@
 ## Discrete Logarithm
 
-In mathematics, a discrete logarithm is an integer k solving the equation bk = g, where b and g are elements of a finite group. Discrete logarithms are thus the finite-group-theoretic analogue of ordinary logarithms, which solve the same equation for real numbers b and g, where b is the base of the logarithm and g is the value whose logarithm is being taken.
+In mathematics, a discrete logarithm is an integer k solving the equation b^k = g, where b and g are elements of a finite group. Discrete logarithms are thus the finite-group-theoretic analogue of ordinary logarithms, which solve the same equation for real numbers b and g, where b is the base of the logarithm and g is the value whose logarithm is being taken.
 No efficient general method for computing discrete logarithms on conventional computers is known. Several important algorithms in public-key cryptography base their security on the assumption that the discrete logarithm problem over carefully chosen groups has no efficient solution.
 
 https://en.wikipedia.org/wiki/Discrete_logarithm
