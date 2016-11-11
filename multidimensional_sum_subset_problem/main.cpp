@@ -26,13 +26,15 @@ int size;
 int dimension;
 
 template<typename T>
-std::vector<ublas::vector<T>> phi(std::vector<ublas::vector<T>> &universe, Z n) {
-    std::vector<ublas::vector<T>> subset;
+std::pair<std::vector<ublas::vector<T>>, std::vector<ublas::vector<T>>> phi(std::vector<ublas::vector<T>> &universe, Z n) {
+    std::vector<ublas::vector<T>> subset_x;
+    std::vector<ublas::vector<T>> subset_y;
     for (auto i = 0; i < universe.size(); i++) {
-        if (n % 2 == 0) { subset.push_back(universe[i]); }
+        if (n % 2 == 0) { subset_x.push_back(universe[i]); }
+        else { subset_y.push_back(universe[i]); }
         n /= 2;
     }
-    return subset;
+    return std::make_pair(subset_x, subset_y);
 }
 
 template<typename T>
@@ -44,24 +46,33 @@ template<typename T>
 std::vector<ublas::vector<T>> abstract_binary_search(std::vector<ublas::vector<T>> universe, ublas::vector<T> target) {
     Z k = 0;
     Z l = (Z(1) << universe.size());
-    double global = std::numeric_limits<double>::max();
+    double local = std::numeric_limits<T>::min();
+    double global = std::numeric_limits<T>::max();
     while (l - k != 1) {
         begin:
         Z i = k;
         Z j = l;
         while (j - i != 1) {
             Z n = (i + j) / 2;
-            auto subset = phi<T>(universe, (k + n) % l);
-            double local = functor<double>(subset, target);
-            if (local > global) {
+
+            auto subsets = phi<T>(universe, (k + n) % l);
+            auto local_x = functor<T>(subsets.first, target);
+            auto local_y = functor<T>(subsets.second, target);
+
+            local = local_x < local_y ? local_x : local_y;
+
+            if (local < global) {
                 i = n;
-            } else if (local < global) {
-                j = n;
                 global = local;
                 std::cout << global << " => " << timer.elapsed() << " (s)" << std::endl;
-                if (!global) { return subset; }
+                if (!global) {
+                    if (functor<T>(subsets.first, target) == 0) {return subsets.first; };
+                    if (functor<T>(subsets.second, target) == 0) {return subsets.second; };
+                }
                 k = 0;
                 goto begin;
+            } else if (local > global) {
+                j = n;
             } else { break; }
         }
         k++;
